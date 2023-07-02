@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -39,6 +39,7 @@ test:
 
 about:
   home: http://datasketches.apache.org
+  dev_url: https://github.com/apache/datasketches-cpp/tree/master/python
   summary: The Apache DataSketches Library for Python
   license: Apache-2.0
   license_file:
