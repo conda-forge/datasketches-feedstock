@@ -39,6 +39,7 @@ test:
 
 about:
   home: http://datasketches.apache.org
+  dev_url: https://github.com/apache/datasketches-cpp/tree/master/python
   summary: The Apache DataSketches Library for Python
   license: Apache-2.0
   license_file:
