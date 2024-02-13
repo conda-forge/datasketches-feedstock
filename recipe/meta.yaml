@@ -10,23 +10,24 @@ source:
   sha256: 5c7a988543c4f4c6c204c1dd325f3a85545492a1bd630699393cd2bb84124a52
 
 build:
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    #- {{ compiler('cxx') }}
   host:
     - python
     - wheel
     - setuptools >=30.3.0
     - cmake >=3.16
     - numpy <2.0
-    - make
-    - pybind11 >=2.6.0
     - nanobind >=1.6
     - pip
+    #- make
+    #- pybind11 >=2.6.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
