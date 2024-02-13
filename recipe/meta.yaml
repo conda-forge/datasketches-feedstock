@@ -26,7 +26,7 @@ requirements:
     - numpy <2.0
     - nanobind >=1.6
     - pip
-    #- make
+    - make
     #- pybind11 >=2.6.0
   run:
     - python
