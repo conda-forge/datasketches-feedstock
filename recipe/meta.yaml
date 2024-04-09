@@ -1,5 +1,5 @@
 {% set name = "datasketches" %}
-{% set version = "5.0.1" %}
+{% set version = "5.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datasketches-{{ version }}.tar.gz
-  sha256: 5c7a988543c4f4c6c204c1dd325f3a85545492a1bd630699393cd2bb84124a52
+  sha256: aa040ccb0d41f0973306b34c293fe1c48f9da0faddbf66b4a2ad9cfa172719cc
 
 build:
   skip: true  # [py<38]
 # https://github.com/conda-forge/datasketches-feedstock/issues/10  
   skip: true  # [osx]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
