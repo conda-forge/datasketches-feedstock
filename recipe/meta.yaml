@@ -14,11 +14,12 @@ build:
 # https://github.com/conda-forge/datasketches-feedstock/issues/10  
   skip: true  # [osx]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
@@ -35,7 +36,6 @@ requirements:
     #- pybind11 >=2.6.0
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
