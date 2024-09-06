@@ -6,23 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datasketches-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datasketches-{{ version }}.tar.gz
   sha256: aa040ccb0d41f0973306b34c293fe1c48f9da0faddbf66b4a2ad9cfa172719cc
 
 build:
-  skip: true  # [py<38]
-# https://github.com/conda-forge/datasketches-feedstock/issues/10  
-  skip: true  # [osx]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]    
+    - numpy                                  # [build_platform != target_platform]
   host:
     - python
     - wheel
