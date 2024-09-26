@@ -1,5 +1,5 @@
 {% set name = "datasketches" %}
-{% set version = "5.0.2" %}
+{% set version = "5.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datasketches-{{ version }}.tar.gz
-  sha256: aa040ccb0d41f0973306b34c293fe1c48f9da0faddbf66b4a2ad9cfa172719cc
+  sha256: 2098c1a23edbfe64a4e2b8c1d344f461e0ce6123ef9d9d4e41ad49140c89460a
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
